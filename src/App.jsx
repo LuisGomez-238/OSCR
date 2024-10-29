@@ -34,6 +34,7 @@ const App = () => {
         assetMake: '',
         assetModel: '',
         VIN: '',
+        assetMarketValue: '',
         assetMiles: '',
         assetHours: '',
         assetEngine: '',
@@ -125,6 +126,7 @@ const App = () => {
         setFieldText('assetMake', formData.assetMake);
         setFieldText('assetModel', formData.assetModel);
         setFieldText('VIN', formData.VIN);
+        setFieldText('assetMarketValue', formData.assetMarketValue);
         setFieldText('assetMiles', formData.assetMiles);
         setFieldText('assetHours', formData.assetHours);
         setFieldText('assetEngine', formData.assetEngine);
@@ -209,6 +211,7 @@ const App = () => {
                 <input type="text" name="assetMake" placeholder="Make" onChange={handleChange} />
                 <input type="text" name="assetModel" placeholder="Model" onChange={handleChange} />
                 <input type="text" name="VIN" placeholder="VIN" onChange={handleChange} />
+                <input type="text" name="assetMarketValue" placeholder="Market Value" onChange={handleChange} />
                 <input type="number" name="assetMiles" placeholder="Miles" onChange={handleChange} />
                 <input type="number" name="assetHours" placeholder="Hours" onChange={handleChange} />
                 <input type="text" name="assetEngine" placeholder="Engine" onChange={handleChange} />
