@@ -11,6 +11,7 @@ const pdfTemplates = {
     POASellerToSlate: '/pdfs/POASellerToSlate.pdf',
     ConsignmentForm: '/pdfs/ConsignmentForm.pdf',
     GuaranteeOfTitle: '/pdfs/GuaranteeOfTitle.pdf',
+    POASellerToSPP: '/pdfs/POASellerToSPP.pdf'
 };
 
 const Seller = () => {
@@ -159,8 +160,9 @@ const Seller = () => {
                 <select name="pdfTemplate" value={selectedTemplate} onChange={handleTemplateChange}>
                     <option value="SellerForms">Seller Forms</option>
                     <option value="ConsignmentForm">Consignment Form</option>
-                    <option value="POASellerToSlate">POA Seller to Slate</option>
                     <option value="GuaranteeOfTitle">Guarantee of Title</option>
+                    <option value="POASellerToSlate">POA Seller to Slate</option>
+                    <option value="POASellerToSPP">POA Seller to State Plate Pro</option>
                 </select>
             </div>
             <form onSubmit={handleSubmit}>
