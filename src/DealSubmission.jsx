@@ -201,10 +201,9 @@ const Deal = () => {
                     <option value="AOFAuth">AOF Credit Authorization</option>
                     <option value="POABuyerToSlate">POA Buyer to Slate</option>
                     <option value="POABuyerToSPP">POA Buyer to State Plate Pro</option>
-
                 </select>
             </div>
-\            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className='header'>
                     <DatePicker
                         selected={formData.date}
