@@ -7,10 +7,10 @@ import './App.css';
 
 // Define the path to your PDF template for the seller form
 const pdfTemplates = {
-    SellerForm: '/pdfs/SellerForms.pdf',
+    SellerForms: '/pdfs/SellerForms.pdf',
     POASellerToSlate: '/pdfs/POASellerToSlate.pdf',
     ConsignmentForm: '/pdfs/ConsignmentForm.pdf',
-
+    GuaranteeOfTitle: '/pdfs/GuaranteeOfTitle.pdf',
 };
 
 const Seller = () => {
@@ -24,10 +24,36 @@ const Seller = () => {
         sellerCDLNumber: '',
         sellerCDLState: '',
         stockNumber: '',
-        dateReceived: new Date(),
+        date: new Date(),
+        // Asset details
+        assetYear: '',
+        assetMake: '',
+        assetModel: '',
+        VIN: '',
+        assetMiles: '',
+        assetHours: '',
+        assetEngine: '',
+        assetEngineSerial: '',
+        assetFuelTank: '',
+        assetTransmission: '',
+        assetSuspension: '',
+        assetTireSize: '',
+        assetWheelType: '',
+        assetSleeper: '',
+        assetDoubleBunk: '',
+        assetInteriorColor: '',
+        assetExteriorColor: '',
+        assetExteriorOptions: '',
+        salePrice: '',
+        lienholderName: '',
+        lienholderAddress: '',
+        lienholderCityStateZip: '',
+        lienholderPhoneNumber: '',
+        payOff: '',
+        payOffExpiration: '',
     });
 
-    const [selectedTemplate, setSelectedTemplate] = useState('BuyerForms');
+    const [selectedTemplate, setSelectedTemplate] = useState('SellerForms');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -73,7 +99,7 @@ const Seller = () => {
                 }
             };
 
-            // Fill in the PDF form fields using the helper function
+            // Fill in the PDF form fields with seller and asset details
             setFieldText('sellerName', formData.sellerName);
             setFieldText('sellerCompanyName', formData.sellerCompanyName);
             setFieldText('sellerAddress', formData.sellerAddress);
@@ -83,7 +109,34 @@ const Seller = () => {
             setFieldText('sellerCDLNumber', formData.sellerCDLNumber);
             setFieldText('sellerCDLState', formData.sellerCDLState);
             setFieldText('stockNumber', formData.stockNumber);
-            setFieldText('dateReceived', format(formData.dateReceived, 'MM/dd/yy')); // Format date
+            setFieldText('date', format(formData.dateReceived, 'MM/dd/yy'));
+
+            // Asset details
+            setFieldText('assetYear', formData.assetYear);
+            setFieldText('assetMake', formData.assetMake);
+            setFieldText('assetModel', formData.assetModel);
+            setFieldText('VIN', formData.VIN);
+            setFieldText('assetMiles', formData.assetMiles);
+            setFieldText('assetHours', formData.assetHours);
+            setFieldText('assetEngine', formData.assetEngine);
+            setFieldText('assetEngineSerial', formData.assetEngineSerial);
+            setFieldText('assetFuelTank', formData.assetFuelTank);
+            setFieldText('assetTransmission', formData.assetTransmission);
+            setFieldText('assetSuspension', formData.assetSuspension);
+            setFieldText('assetTireSize', formData.assetTireSize);
+            setFieldText('assetWheelType', formData.assetWheelType);
+            setFieldText('assetSleeper', formData.assetSleeper);
+            setFieldText('assetDoubleBunk', formData.assetDoubleBunk);
+            setFieldText('assetInteriorColor', formData.assetInteriorColor);
+            setFieldText('assetExteriorColor', formData.assetExteriorColor);
+            setFieldText('assetExteriorOptions', formData.assetExteriorOptions);
+            setFieldText('salePrice', formData.salePrice);
+            setFieldText('lienholderName', formData.lienholderName);
+            setFieldText('lienholderAddress', formData.lienholderAddress);
+            setFieldText('lienholderCityStateZip', formData.lienholderCityStateZip);
+            setFieldText('lienholderPhoneNumber', formData.lienholderPhoneNumber);
+            setFieldText('payOff', formData.payOff);
+            setFieldText('payOffExpiration', formData.payOffExpiration);
 
             // Serialize the PDF and trigger a download
             const pdfBytesFilled = await pdfDoc.save();
@@ -107,6 +160,7 @@ const Seller = () => {
                     <option value="SellerForms">Seller Forms</option>
                     <option value="ConsignmentForm">Consignment Form</option>
                     <option value="POASellerToSlate">POA Seller to Slate</option>
+                    <option value="GuaranteeOfTitle">Guarantee of Title</option>
                 </select>
             </div>
             <form onSubmit={handleSubmit}>
@@ -128,6 +182,38 @@ const Seller = () => {
                     <input type="email" name="sellerEmail" placeholder="Email" onChange={handleChange} />
                     <input type="text" name="sellerCDLNumber" placeholder="CDL Number" onChange={handleChange} />
                     <input type="text" name="sellerCDLState" placeholder="CDL State" onChange={handleChange} />
+                </div>
+                <div className='assetDetails'>
+                    <input type="text" name="assetYear" placeholder="Asset Year" onChange={handleChange} />
+                    <input type="text" name="assetMake" placeholder="Asset Make" onChange={handleChange} />
+                    <input type="text" name="assetModel" placeholder="Asset Model" onChange={handleChange} />
+                    <input type="text" name="VIN" placeholder="VIN" onChange={handleChange} />
+                    <input type="text" name="assetMiles" placeholder="Miles" onChange={handleChange} />
+                    <input type="text" name="assetHours" placeholder="Hours" onChange={handleChange} />
+                    <input type="text" name="assetEngine" placeholder="Engine" onChange={handleChange} />
+                    <input type="text" name="assetEngineSerial" placeholder="Engine Serial" onChange={handleChange} />
+                    <input type="text" name="assetFuelTank" placeholder="Fuel Tank" onChange={handleChange} />
+                    <input type="text" name="assetTransmission" placeholder="Transmission" onChange={handleChange} />
+                    <input type="text" name="assetSuspension" placeholder="Suspension" onChange={handleChange} />
+                    <input type="text" name="assetTireSize" placeholder="Tire Size" onChange={handleChange} />
+                    <input type="text" name="assetWheelType" placeholder="Wheel Type" onChange={handleChange} />
+                    <input type="text" name="assetSleeper" placeholder="Sleeper" onChange={handleChange} />
+                    <input type="text" name="assetDoubleBunk" placeholder="Double Bunk" onChange={handleChange} />
+                    <input type="text" name="assetInteriorColor" placeholder="Interior Color" onChange={handleChange} />
+                    <input type="text" name="assetExteriorColor" placeholder="Exterior Color" onChange={handleChange} />
+                    <input type="text" name="assetExteriorOptions" placeholder="Exterior Options" onChange={handleChange} />
+                    <input type="text" name="salePrice" placeholder="Sale Price" onChange={handleChange} />
+                    <input type="text" name="lienholderName" placeholder="Lienholder Name" onChange={handleChange} />
+                    <input type="text" name="lienholderAddress" placeholder="Lienholder Address" onChange={handleChange} />
+                    <input type="text" name="lienholderCityStateZip" placeholder="Lienholder City, State, Zip" onChange={handleChange} />
+                    <input type="text" name="lienholderPhoneNumber" placeholder="Lienholder Phone Number" onChange={handleChange} />
+                    <input type="text" name="payOff" placeholder="Payoff Amount" onChange={handleChange} />
+                    <DatePicker
+                        selected={formData.payOffExpiration}
+                        onChange={(date) => setFormData({ ...formData, payOffExpiration: date })}
+                        dateFormat="MM/dd/yy"
+                        placeholderText="Payoff Expiration Date"
+                    />
                 </div>
                 <button type="submit">Submit</button>
             </form>

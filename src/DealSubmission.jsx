@@ -233,7 +233,7 @@ const Deal = () => {
                     <input type="text" name="buyerEIN" placeholder="EIN" onChange={handleChange} />
                     <input type="text" name="buyerSS" placeholder="SSN" onChange={handleChange} />
                 </div>
-                <div className='sellerInfo'>
+                {/* <div className='sellerInfo'>
                     <h2>Seller Information</h2>
                     <input type="text" name="sellerName" placeholder="Seller Name" onChange={handleChange} />
                     <input type="text" name="sellerCompanyName" placeholder="Company Name" onChange={handleChange} />
@@ -243,7 +243,7 @@ const Deal = () => {
                     <input type="email" name="sellerEmail" placeholder="Email" onChange={handleChange} />
                     <input type="text" name="sellerCDLNumber" placeholder="CDL Number" onChange={handleChange} />
                     <input type="text" name="sellerCDLState" placeholder="CDL State" onChange={handleChange} />
-                </div>
+                </div> */}
                 <div className='assetDetails'>
                     <h2>Asset Details</h2>
                     <input type="text" name="assetYear" placeholder="Asset Year" onChange={handleChange} />
