@@ -19,7 +19,9 @@ const Seller = () => {
         sellerName: '',
         sellerCompanyName: '',
         sellerAddress: '',
-        sellerCityStateZip: '',
+        sellerCity: '',
+        sellerState:'',
+        sellerZip: '',
         sellerPhone: '',
         sellerEmail: '',
         sellerCDLNumber: '',
@@ -104,7 +106,9 @@ const Seller = () => {
             setFieldText('sellerName', formData.sellerName);
             setFieldText('sellerCompanyName', formData.sellerCompanyName);
             setFieldText('sellerAddress', formData.sellerAddress);
-            setFieldText('sellerCityStateZip', formData.sellerCityStateZip);
+            setFieldText('sellerCity', formData.sellerCity);
+            setFieldText('sellerState', formData.sellerState);
+            setFieldText('sellerZip', formData.sellerZip);
             setFieldText('sellerPhone', formData.sellerPhone);
             setFieldText('sellerEmail', formData.sellerEmail);
             setFieldText('sellerCDLNumber', formData.sellerCDLNumber);
@@ -179,7 +183,9 @@ const Seller = () => {
                     <input type="text" name="sellerName" placeholder="Seller Name" onChange={handleChange} />
                     <input type="text" name="sellerCompanyName" placeholder="Company Name" onChange={handleChange} />
                     <input type="text" name="sellerAddress" placeholder="Address" onChange={handleChange} />
-                    <input type="text" name="sellerCityStateZip" placeholder="City, State, Zip" onChange={handleChange} />
+                    <input type="text" name="sellerCity" placeholder="City" onChange={handleChange} />
+                    <input type="text" name="sellerState" placeholder="State" onChange={handleChange} />
+                    <input type="text" name="sellerZip" placeholder="Zip" onChange={handleChange} />
                     <input type="tel" name="sellerPhone" placeholder="Phone" onChange={handleChange} />
                     <input type="email" name="sellerEmail" placeholder="Email" onChange={handleChange} />
                     <input type="text" name="sellerCDLNumber" placeholder="CDL Number" onChange={handleChange} />
