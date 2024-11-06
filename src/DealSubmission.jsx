@@ -20,6 +20,9 @@ const Deal = () => {
         buyerName: '',
         buyerEmail: '',
         buyerAddress: '',
+        buyerCity: '',
+        buyerState: '',
+        buyerZip: '',
         date: new Date(),
         salesPerson: '',
         dealNumber: '',
@@ -30,7 +33,6 @@ const Deal = () => {
         sellerPhone: '',
         sellerEmail: '',
         buyerCompanyName: '',
-        buyerCityStateZip: '',
         buyerPhone: '',
         stockNumber: '',
         // Asset details
@@ -123,6 +125,9 @@ const Deal = () => {
             setFieldText('buyerName', formData.buyerName);
             setFieldText('buyerEmail', formData.buyerEmail);
             setFieldText('buyerAddress', formData.buyerAddress);
+            setFieldText('buyerCity', formData.buyerCity);
+            setFieldText('buyerState', formData.buyerState);
+            setFieldText('buyerZip', formData.buyerZip);
             setFieldText('date', format(formData.date, 'MM/dd/yy')); // Format date
             setFieldText('salesPerson', formData.salesPerson);
             setFieldText('dealNumber', formData.dealNumber);
@@ -220,7 +225,9 @@ const Deal = () => {
                     <input type="text" name="buyerName" placeholder="Buyer Name" onChange={handleChange} />
                     <input type="text" name="buyerCompanyName" placeholder="Company Name" onChange={handleChange} />
                     <input type="text" name="buyerAddress" placeholder="Address" onChange={handleChange} />
-                    <input type="text" name="buyerCityStateZip" placeholder="City, State, Zip" onChange={handleChange} />
+                    <input type="text" name="buyerCity" placeholder="City" onChange={handleChange} />
+                    <input type="text" name="buyerState" placeholder="State" onChange={handleChange} />
+                    <input type="text" name="buyerZip" placeholder="Zip" onChange={handleChange} />                    
                     <input type="tel" name="buyerPhone" placeholder="Phone" onChange={handleChange} />
                     <input type="email" name="buyerEmail" placeholder="Email" onChange={handleChange} />
                     <input type="text" name="buyerCDLNumber" placeholder="CDL Number" onChange={handleChange} />
