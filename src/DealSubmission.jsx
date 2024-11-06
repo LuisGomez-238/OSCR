@@ -238,7 +238,7 @@ const Deal = () => {
                     <input type="text" name="buyerTrucksInFleet" placeholder="Trucks in Fleet" onChange={handleChange} />
                     <input type="text" name="buyerTrailersInFleet" placeholder="Trailers in Fleet" onChange={handleChange} />
                     <input type="text" name="buyerEIN" placeholder="EIN" onChange={handleChange} />
-                    <input type="text" name="buyerSS" placeholder="SSN" onChange={handleChange} />
+                    <input type="text" name="buyerSocial" placeholder="SSN" onChange={handleChange} />
                 </div>
                 {/* <div className='sellerInfo'>
                     <h2>Seller Information</h2>
